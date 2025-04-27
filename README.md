@@ -1,32 +1,27 @@
-ZiboRDM6300 Library
-A lightweight and efficient Arduino library for interfacing with the RDM6300 RFID reader module.
-This library handles frame parsing, tag extraction, and checksum validation to quickly and reliably detect RFID tags.
+# ZiboRDM6300 Library
 
-Installation
-Download the library as a ZIP file from this repository.
+A lightweight and efficient Arduino library for interfacing with the RDM6300 RFID reader module. This library handles frame parsing, tag extraction, and checksum validation to quickly and reliably detect RFID tags.
 
-Open the Arduino IDE.
+## Installation
 
-Go to Sketch > Include Library > Add .ZIP Library.
+1. Download the library as a ZIP file from this repository.
+2. Open the Arduino IDE.
+3. Go to **Sketch** > **Include Library** > **Add .ZIP Library**.
+4. Select the downloaded ZIP file.
+5. The library will now appear under **ZiboRDM6300** in the Arduino Library Manager.
 
-Select the downloaded ZIP file.
+## Wiring
 
-The library will now appear under ZiboRDM6300 in the Arduino Library Manager.
-
-Wiring
-RDM6300 TX → Arduino RX Pin (e.g., D6)
-
-RDM6300 RX → Arduino TX Pin (e.g., D8)
-
-Power the RDM6300 with 5V.
-
-Connect GND properly.
+- **RDM6300 TX** → **Arduino RX Pin** (e.g., D6)
+- **RDM6300 RX** → **Arduino TX Pin** (e.g., D8)
+- **Power the RDM6300 with 5V**.
+- **Connect GND properly**.
 
 Note: The library uses SoftwareSerial, so you can define any digital pins for RX and TX.
 
-Example Usage
+## Example Usage
 
-
+```cpp
 #include <ZiboRDM6300.h>
 
 // Initialize RFID reader: RX pin 6, TX pin 8
@@ -48,36 +43,3 @@ void loop() {
     Serial.println("--------");
   }
 }
-
-
-Library API (Methods)
-ZiboRDM6300(uint8_t rxPin, uint8_t txPin)
-Constructor to create an RFID reader instance with custom RX and TX pins.
-
-void begin(long baudRate = 9600)
-Initializes the RFID module with a specified baud rate (default 9600).
-
-bool readTag()
-Reads and processes incoming RFID data. Returns true if a tag is successfully read.
-
-long getTag() const
-Returns the detected RFID tag value as a long integer.
-
-bool isChecksumValid() const
-Checks if the last read tag has a valid checksum.
-
-Notes
-Uses SoftwareSerial, so you can define flexible pins (except 0/1 reserved for Serial).
-
-No delays are used internally, ensuring fast detection.
-
-Additional actions (like turning on an LED) must be handled in your own sketch.
-
-Ensure stable 5V power supply for the RDM6300 module.
-
-License
-This library is licensed under the MIT License.
-See the LICENSE file for details.
-
-✅ This version is clean, non-repetitive, and beginner-friendly!
-✅ It would look very professional if someone sees your GitHub page.
