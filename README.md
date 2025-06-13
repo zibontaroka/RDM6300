@@ -43,3 +43,9 @@ void loop() {
     Serial.println("--------");
   }
 }
+
+🧑‍💻 Developer Info
+Md Shaifulla Zibon
+IoT Systems Designer | SMPS Engineer | Web Dashboard Integrator
+🎓 B.Sc. in Electrical and Electronic Engineering
+🏫 European University of Bangladesh
